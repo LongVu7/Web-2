@@ -7,6 +7,8 @@
 </head>
 <body>
     <script >
+
+      // Function to calculate Rectangle area
       function calcRectarea(aWidth, aHeight) {
         let area = aWidth * aHeight;
         return area;
@@ -19,7 +21,7 @@
       }
 
 
-      // BMI = weight (kg) / (height (m) x height (m))
+      // Function to calculate BMI 
       function calcBMI(weight, height) {
         let bmi = weight / (height * height);
         return bmi;
@@ -32,7 +34,7 @@
         document.getElementById("BMIResult").innerHTML = "The BMI with weight " + newWeight + " and height " + newHeight + " is " + newBMI;
       }
 
-      // Perimeter = 2 * (width + height)
+      // Function to calculate Perimeter of a list of numbers
       function calcPerimeter(width, height) {
         let perimeter = 2 * (width + height);
         return perimeter;
@@ -45,7 +47,7 @@
         document.getElementById("perimeterResult").innerHTML = "The perimeter of a rectangle with width " + newWidth + " and height " + newHeight + " is " + newPerimeter;
       }
       
-      // Average = (num1 + num2 + ... + numN) / N
+      // Function to calculate average of a list of numbers
       function calcAverage(numbers) {
         let total = 0;
         for (let i = 0; i < numbers.length; i++) {
@@ -59,6 +61,7 @@
         let avg = calcAverage(nums);
         document.getElementById("averageResult").innerHTML = "The average of " + nums.join(", ") + " is " + avg;
       }
+
       // Total Minutes = (hours * 60) + minutes
       function totalMinutes(hours, minutes) {
         return (hours * 60) + minutes;
@@ -90,11 +93,11 @@
 
     <form>
       <h3>Calculate Area</h3>
-      <label for="width">Width:</label>
-      <input type="text" id="awidth" value="5">
+      <label for="awidth">Width:</label>
+      <input type="text" id="awidth" value="">
       <br>
-      <label for="height">Height:</label>
-      <input type="text" id="aheight" value="6">
+      <label for="aheight">Height:</label>
+      <input type="text" id="aheight" value="">
       <br>
       <input type="button" value="Calculate Area" onclick="doCalc()">
       <p id="areaResult"></p>
@@ -106,10 +109,10 @@
     <form>
       <h3>Calculate BMI</h3>
       <label for="width">Width:</label>
-      <input type="text" id="weight" value="5">
+      <input type="text" id="weight" value="">
       <br>
       <label for="height">Height:</label>
-      <input type="text" id="height" value="6">
+      <input type="text" id="height" value="">
       <br>
       <input type="button" value="Calculate BMI" onclick="doCalcBMI()">
       <p id="BMIResult"></p>
@@ -121,16 +124,17 @@
     <form>
       <h3>Calculate perimeter</h3>
       <label for="width">Width:</label>
-      <input type="text" id="pwidth" value="5">
+      <input type="text" id="pwidth" value="">
       <br>
       <label for="height">Height:</label>
-      <input type="text" id="pheight" value="6">
+      <input type="text" id="pheight" value="">
       <br>
       <input type="button" value="Calculate Perimeter" onclick="doCalcPerimeter()">
       <p id="perimeterResult"></p>
     </form>
 
-
+    <br>
+    <br>
     <form>
       <h3>Calculate average</h3>
       <label for="numbers">Numbers: </label>
@@ -144,11 +148,11 @@
 
     <form>
       <h3>Calculate total minutes</h3>
-      <label for="width">Hours:</label>
-      <input type="text" id="hours" value="5">
+      <label for="hours">Hours:</label>
+      <input type="text" id="hours" value="">
       <br>
-      <label for="height">Minutes:</label>
-      <input type="text" id="minutes" value="6">
+      <label for="minutes">Minutes:</label>
+      <input type="text" id="minutes" value="">
       <br>
       <input type="button" value="Calculate total minutes" onclick="doCalcTotalMinutes()">
       <p id="totalMinutesResult"></p>

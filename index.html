@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP1779 - Javascript Tutorial</title>
+</head>
+<body>
+    <script >
+      function calcRectarea(aWidth, aHeight) {
+        let area = aWidth * aHeight;
+        return area;
+      }
+      function doCalc() {
+        let newWidth = document.getElementById("awidth").value
+        let newHeight = document.getElementById("aheight").value
+        let newArea = calcRectarea(newWidth, newHeight);
+        document.getElementById("areaResult").innerHTML = "The area of a rectangle with width " + newWidth + " and height " + newHeight + " is " + newArea;
+      }
+
+
+      // BMI = weight (kg) / (height (m) x height (m))
+      function calcBMI(weight, height) {
+        let bmi = weight / (height * height);
+        return bmi;
+      }
+
+      function doCalcBMI() {
+        let newWeight = document.getElementById("weight").value
+        let newHeight = document.getElementById("height").value
+        let newBMI = calcBMI(newWeight, newHeight);
+        document.getElementById("BMIResult").innerHTML = "The BMI with weight " + newWeight + " and height " + newHeight + " is " + newBMI;
+      }
+
+      // Perimeter = 2 * (width + height)
+      function calcPerimeter(width, height) {
+        let perimeter = 2 * (width + height);
+        return perimeter;
+      }
+
+      function doCalcPerimeter() {
+        let newWidth = document.getElementById("pwidth").value
+        let newHeight = document.getElementById("pheight").value
+        let newPerimeter = calcPerimeter(newWidth, newHeight);
+        document.getElementById("perimeterResult").innerHTML = "The perimeter of a rectangle with width " + newWidth + " and height " + newHeight + " is " + newPerimeter;
+      }
+      
+      // Average = (num1 + num2 + ... + numN) / N
+      function calcAverage(numbers) {
+        let total = 0;
+        for (let i = 0; i < numbers.length; i++) {
+          total += numbers[i];
+        }
+        let average = total / numbers.length;
+        return average;
+      }
+      function doCalcAverage() {
+        let nums = document.getElementById("numbers").value.split(",").map(Number);
+        let avg = calcAverage(nums);
+        document.getElementById("averageResult").innerHTML = "The average of " + nums.join(", ") + " is " + avg;
+      }
+      // Total Minutes = (hours * 60) + minutes
+      function totalMinutes(hours, minutes) {
+        return (hours * 60) + minutes;
+      }
+
+      function doCalcTotalMinutes() {
+        let hours = parseInt(document.getElementById("hours").value);
+        let minutes = parseInt(document.getElementById("minutes").value);
+        let total = totalMinutes(hours, minutes);
+        document.getElementById("totalMinutesResult").innerHTML = hours + " hours and " + minutes + " minutes is " + total + " minutes.";
+      }
+
+      // Max Value = the largest number in a list of numbers
+      function findMaxValue(numbers) {
+        let max = numbers[0];
+        for (let i = 1; i < numbers.length; i++) {
+          if (numbers[i] > max) {
+            max = numbers[i];
+          }
+        }
+        return max;
+      }
+      function doFindMaxValue() {
+        let nums = document.getElementById("numbersM").value.split(",").map(Number);
+        let max = findMaxValue(nums);
+        document.getElementById("maxResult").innerHTML = "The maximum value of " + nums.join(", ") + " is " + max;
+      }
+    </script>
+
+    <form>
+      <h3>Calculate Area</h3>
+      <label for="width">Width:</label>
+      <input type="text" id="awidth" value="5">
+      <br>
+      <label for="height">Height:</label>
+      <input type="text" id="aheight" value="6">
+      <br>
+      <input type="button" value="Calculate Area" onclick="doCalc()">
+      <p id="areaResult"></p>
+    </form>
+
+    <br>
+    <br>
+    
+    <form>
+      <h3>Calculate BMI</h3>
+      <label for="width">Width:</label>
+      <input type="text" id="weight" value="5">
+      <br>
+      <label for="height">Height:</label>
+      <input type="text" id="height" value="6">
+      <br>
+      <input type="button" value="Calculate BMI" onclick="doCalcBMI()">
+      <p id="BMIResult"></p>
+    </form>
+
+    <br>
+    <br>
+
+    <form>
+      <h3>Calculate perimeter</h3>
+      <label for="width">Width:</label>
+      <input type="text" id="pwidth" value="5">
+      <br>
+      <label for="height">Height:</label>
+      <input type="text" id="pheight" value="6">
+      <br>
+      <input type="button" value="Calculate Perimeter" onclick="doCalcPerimeter()">
+      <p id="perimeterResult"></p>
+    </form>
+
+
+    <form>
+      <h3>Calculate average</h3>
+      <label for="numbers">Numbers: </label>
+      <input type="text" id="numbers" value="">
+      <br>
+      <input type="button" value="Calculate Average" onclick="doCalcAverage()">
+      <p id="averageResult"></p>
+    </form>
+    <br>
+    <br>
+
+    <form>
+      <h3>Calculate total minutes</h3>
+      <label for="width">Hours:</label>
+      <input type="text" id="hours" value="5">
+      <br>
+      <label for="height">Minutes:</label>
+      <input type="text" id="minutes" value="6">
+      <br>
+      <input type="button" value="Calculate total minutes" onclick="doCalcTotalMinutes()">
+      <p id="totalMinutesResult"></p>
+    </form>
+    <br>
+    <br>
+    <form>
+      <h3>Find max value</h3>
+      <label for="numbersM">Numbers: </label>
+      <input type="text" id="numbersM" value="">
+      <br>
+      <input type="button" value="Find Max Value" onclick="doFindMaxValue()">
+      <p id="maxResult"></p>
+    </form>
+</body>
+</html>
